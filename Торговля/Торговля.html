@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Премиальная торговая платформа для криптовалют">
+    <title>NexusPay | Торговая платформа</title>
+    <link rel="stylesheet" href="Торговля.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="../фото/logo.png" alt="Logo" class="logo-img">
+                    <h1>NexusPay</h1>
+                </div>
+                <button class="menu-toggle" aria-label="Меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="../Кошелек/Кошелек.html" class="nav-item">
+                    <i class="fas fa-home nav-icon"></i>
+                    <span>Главная</span>
+                </a>
+                <!-- Remove this block -->
+                <!--
+                <a href="../Кошелек/Кошелек.html" class="nav-item">
+                    <i class="fas fa-wallet nav-icon"></i>
+                    <span>Активы</span>
+                </a>
+                -->
+                <a href="Торговля.html" class="nav-item active">
+                    <i class="fas fa-chart-line nav-icon"></i>
+                    <span>Торговля</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-exchange-alt nav-icon"></i>
+                    <span>Обмен</span>
+                </a>
+                <a href="../История/История.html" class="nav-item">
+                    <i class="fas fa-history nav-icon"></i>
+                    <span>История</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" class="user-profile">
+                    <div class="user-avatar">NK</div>
+                    <div class="user-info">
+                        <span class="user-name">Никита Курлов</span>
+                        <span class="user-status">Premium</span>
+                    </div>
+                </a>
+                <button class="settings-btn" aria-label="Настройки">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-search">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Поиск криптовалюты..." class="search-input" id="searchInput">
+                </div>
+                <div class="header-actions">
+                    <button class="action-btn notification-btn" aria-label="Уведомления">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">2</span>
+                    </button>
+                    <div class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                        <label class="switch">
+                            <input type="checkbox" id="themeToggle" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <i class="fas fa-sun"></i>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard">
+                <section class="trading-header">
+                    <div class="welcome-text">
+                        <h2>Торговая платформа</h2>
+                        <p>Торгуйте популярными криптовалютами по выгодным ценам</p>
+                    </div>
+                    <div class="view-options">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th-large"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="market-overview">
+                    <div class="market-tabs">
+                        <button class="market-tab active" data-tab="all">Все монеты</button>
+                        <button class="market-tab" data-tab="favorites">Избранное</button>
+                        <button class="market-tab" data-tab="trending">Популярное</button>
+                        <button class="market-tab" data-tab="gainers">Растущие</button>
+                        <button class="market-tab" data-tab="losers">Падающие</button>
+                    </div>
+
+                    <div class="pairs-container">
+                        <div class="pairs-list" id="pairsList">
+                            <!-- Монеты будут добавлены через JavaScript -->
+                        </div>
+                    </div>
+                </section>
+
+                <section class="market-analytics">
+                    <div class="section-header">
+                        <h3>Рыночная аналитика</h3>
+                        <button class="refresh-btn" aria-label="Обновить">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                    <div class="analytics-cards">
+                        <div class="analytics-card">
+                            <div class="analytics-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="analytics-info">
+                                <span class="analytics-title">Общая капитализация</span>
+                                <span class="analytics-value">$1.24T</span>
+                                <span class="analytics-change positive">+1.8%</span>
+                            </div>
+                        </div>
+                        <div class="analytics-card">
+                            <div class="analytics-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <div class="analytics-info">
+                                <span class="analytics-title">Доминация BTC</span>
+                                <span class="analytics-value">52.3%</span>
+                                <span class="analytics-change negative">-0.5%</span>
+                            </div>
+                        </div>
+                        <div class="analytics-card">
+                            <div class="analytics-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="analytics-info">
+                                <span class="analytics-title">Объем торгов 24ч</span>
+                                <span class="analytics-value">$48.6B</span>
+                                <span class="analytics-change positive">+3.2%</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="quick-trade">
+                    <div class="section-header">
+                        <h3>Быстрая торговля</h3>
+                    </div>
+                    <div class="trade-card">
+                        <div class="trade-selector">
+                            <div class="coin-select">
+                                <img src="../фото/Bitcoin.svg.webp" alt="Bitcoin" class="selected-coin-icon" id="selectedCoinIcon">
+                                <select id="coinSelect" class="coin-dropdown">
+                                    <!-- Опции будут добавлены через JavaScript -->
+                                </select>
+                            </div>
+                            <div class="amount-input">
+                                <input type="number" placeholder="0.00" id="tradeAmount">
+                                <span class="amount-currency">RUB</span>
+                            </div>
+                        </div>
+                        <div class="trade-actions">
+                            <button class="trade-btn buy">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>Купить</span>
+                            </button>
+                            <button class="trade-btn sell">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>Продать</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <div class="mobile-nav">
+            <a href="../Кошелек/Кошелек.html" class="mobile-nav-item">
+                <i class="fas fa-home"></i>
+                <span>Главная</span>
+            </a>
+            <a href="Торговля.html" class="mobile-nav-item active">
+                <i class="fas fa-chart-line"></i>
+                <span>Торговля</span>
+            </a>
+            <a href="../История/История.html" class="mobile-nav-item">
+                <i class="fas fa-history"></i>
+                <span>История</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="Торговля.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Сделайте ставку на рост или падение цены криптовалюты">
+    <title>NexusPay - Бейтинг</title>
+    <link rel="stylesheet" href="бейтинг.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="betting-container">
+        <div class="betting-header">
+            <button class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1>Бейтинг</h1>
+            <div class="header-actions">
+                <button class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="betting-content">
+            <div class="coin-info">
+                <div class="coin-header">
+                    <img src="" alt="" class="coin-icon">
+                    <div class="coin-details">
+                        <h2 class="coin-name"></h2>
+                        <p class="coin-price"></p>
+                    </div>
+                </div>
+                <div class="bet-type-indicator">
+                    <span class="bet-type"></span>
+                </div>
+            </div>
+
+            <div class="betting-form">
+                <div class="time-options">
+                    <button class="time-option active" data-time="10">10 сек</button>
+                    <button class="time-option" data-time="30">30 сек</button>
+                    <button class="time-option" data-time="60">60 сек</button>
+                </div>
+
+                <div class="amount-input">
+                    <label>Сумма ставки</label>
+                    <div class="input-group">
+                        <input type="number" id="betAmount" placeholder="0.00">
+                        <span class="currency">USDT</span>
+                    </div>
+                    <div class="quick-amounts">
+                        <button class="quick-amount" data-amount="10">10</button>
+                        <button class="quick-amount" data-amount="50">50</button>
+                        <button class="quick-amount" data-amount="100">100</button>
+                        <button class="quick-amount" data-amount="500">500</button>
+                    </div>
+                </div>
+
+                <div class="bet-details">
+                    <div class="detail-item">
+                        <span>Потенциальный выигрыш</span>
+                        <span class="potential-profit">0.00 USDT</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>Коэффициент</span>
+                        <span class="multiplier">1.80x</span>
+                    </div>
+                </div>
+
+                <button class="place-bet-btn">Сделать ставку</button>
+            </div>
+
+            <div class="timer-section hidden">
+                <div class="timer">
+                    <div class="timer-circle">
+                        <svg class="timer-svg">
+                            <circle class="timer-path"></circle>
+                        </svg>
+                        <span class="timer-value">10</span>
+                    </div>
+                </div>
+                <div class="price-info">
+                    <div class="current-price">
+                        <span>Текущая цена</span>
+                        <span class="price-value">0.00</span>
+                    </div>
+                    <div class="target-price">
+                        <span>Целевая цена</span>
+                        <span class="target-value">0.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-section hidden">
+                <div class="result-icon">
+                    <i class="fas"></i>
+                </div>
+                <h2 class="result-title"></h2>
+                <p class="result-message"></p>
+                <div class="result-details">
+                    <div class="detail-item">
+                        <span>Сумма ставки</span>
+                        <span class="bet-amount">0.00 USDT</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>Выигрыш</span>
+                        <span class="win-amount">0.00 USDT</span>
+                    </div>
+                </div>
+                <button class="new-bet-btn">Новая ставка</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="бейтинг.js"></script>
+</body>
+</html>

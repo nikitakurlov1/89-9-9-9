@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Детальная информация о криптовалютах - NexusPay">
+    <title>NexusPay | Информация о монете</title>
+    <link rel="stylesheet" href="инфа о монетах.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="../фото/logo.png" alt="Logo" class="logo-img">
+                    <h1>NexusPay</h1>
+                </div>
+                <button class="menu-toggle" aria-label="Меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="../Кошелек/Кошелек.html" class="nav-item">
+                    <i class="fas fa-home nav-icon"></i>
+                    <span>Главная</span>
+                </a>
+                <a href="../Кошелек/Кошелек.html" class="nav-item">
+                    <i class="fas fa-wallet nav-icon"></i>
+                    <span>Активы</span>
+                </a>
+                <a href="../Торговля/Торговля.html" class="nav-item active">
+                    <i class="fas fa-chart-line nav-icon"></i>
+                    <span>Торговля</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-exchange-alt nav-icon"></i>
+                    <span>Обмен</span>
+                </a>
+                <a href="../История/История.html" class="nav-item">
+                    <i class="fas fa-history nav-icon"></i>
+                    <span>История</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" class="user-profile">
+                    <div class="user-avatar">NK</div>
+                    <div class="user-info">
+                        <span class="user-name">Никита Курлов</span>
+                        <span class="user-status">Premium</span>
+                    </div>
+                </a>
+                <button class="settings-btn" aria-label="Настройки">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-actions left">
+                    <button class="back-btn" aria-label="Назад">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Назад к списку</span>
+                    </button>
+                </div>
+                <div class="header-actions right">
+                    <button class="favorite-btn" aria-label="Добавить в избранное">
+                        <i class="far fa-star"></i>
+                    </button>
+                    <div class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                        <label class="switch">
+                            <input type="checkbox" id="themeToggle" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <i class="fas fa-sun"></i>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard">
+                <section class="coin-header">
+                    <div class="coin-title">
+                        <span class="coin-icon">₿</span>
+                        <div class="coin-name-container">
+                            <h2 class="coin-name" id="coinName"></h2>
+                            <span class="coin-symbol" id="coinSymbol"></span>
+                        </div>
+                    </div>
+                    <div class="coin-price-info">
+                        <div class="price-container">
+                            <span class="price" id="coinPrice"></span>
+                            <span class="change" id="coinChange"></span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="chart-section">
+                    <div class="card-header">
+                        <h3>График цены</h3>
+                        <div class="chart-controls">
+                            <button class="time-btn active" data-interval="1h">1ч</button>
+                            <button class="time-btn" data-interval="4h">4ч</button>
+                            <button class="time-btn" data-interval="1d">1д</button>
+                            <button class="time-btn" data-interval="1w">1н</button>
+                            <button class="time-btn" data-interval="1m">1м</button>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas class="price-chart" aria-label="График цены"></canvas>
+                    </div>
+                </section>
+
+                <section class="stats-section">
+                    <h3 class="section-title">Ключевые показатели</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-label">Капитализация</span>
+                                <span class="stat-value" id="marketCap"></span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-label">Объем торгов (24ч)</span>
+                                <span class="stat-value" id="volume"></span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-label">Макс. предложение</span>
+                                <span class="stat-value" id="maxSupply"></span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-label">Ранг</span>
+                                <span class="stat-value" id="rank"></span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="two-column-layout">
+                    <section class="about-section">
+                        <h3 class="section-title">О монете</h3>
+                        <div class="about-content">
+                            <p class="description" id="description"></p>
+                        </div>
+                    </section>
+
+                    <section class="action-section">
+                        <h3 class="section-title">Торговля</h3>
+                        <div class="trade-actions">
+                            <div class="amount-input">
+                                <input type="number" placeholder="0.00" id="tradeAmount">
+                                <span class="amount-currency">RUB</span>
+                            </div>
+                            <button class="action-btn buy-btn">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>Купить</span>
+                            </button>
+                            <button class="action-btn sell-btn">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>Продать</span>
+                            </button>
+                        </div>
+                    </section>
+                </div>
+
+                <section class="staking-section">
+                    <div class="staking-card">
+                        <div class="staking-header">
+                            <div class="staking-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="staking-info">
+                                <h3>Бейтинг</h3>
+                                <p>Делайте ставки на рост или падение курса и получайте прибыль при успешном прогнозе</p>
+                            </div>
+                        </div>
+                        <div class="staking-details">
+                            <div class="staking-rate">
+                                <span class="rate-label">Потенциальная прибыль</span>
+                                <span class="rate-value">до <b id="stakingRate">100%</b></span>
+                            </div>
+                            <div class="staking-period">
+                                <span class="period-label">Период прогноза</span>
+                                <span class="period-value">от 10 до 60 секунд</span>
+                            </div>
+                        </div>
+                        <div class="betting-actions">
+                            <button class="betting-btn up-btn">
+                                <i class="fas fa-arrow-up"></i> Ставка на рост
+                            </button>
+                            <button class="betting-btn down-btn">
+                                <i class="fas fa-arrow-down"></i> Ставка на падение
+                            </button>
+                            
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <div class="mobile-nav">
+            <a href="../Кошелек/Кошелек.html" class="mobile-nav-item">
+                <i class="fas fa-home"></i>
+                <span>Главная</span>
+            </a>
+            <!-- Remove this block -->
+            <!--
+            <a href="../Кошелек/Кошелек.html" class="mobile-nav-item">
+                <i class="fas fa-wallet"></i>
+                <span>Активы</span>
+            </a>
+            -->
+            <a href="../Торговля/Торговля.html" class="mobile-nav-item active">
+                <i class="fas fa-chart-line"></i>
+                <span>Торговля</span>
+            </a>
+            <a href="../История/История.html" class="mobile-nav-item">
+                <i class="fas fa-history"></i>
+                <span>История</span>
+            </a>
+        </div>
+    </div>
+    <script src="инфа о монетах.js"></script>
+</body>
+</html>
+
